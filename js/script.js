@@ -11,7 +11,7 @@ const resultEl = document.querySelector('p#result');
 // || VARIABLES
 const randomNumbersArray = [];
 let numbers = 5;
-let timerTime = 5;
+let timerTime = 30;
 const userNumbersArray = [];
 const correctUserNumbers = [];
 
