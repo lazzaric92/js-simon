@@ -1,6 +1,11 @@
 const randomNumbersArray = [];
+let timerTime = 30;
+const showNumbers = randomNumbersArray.join(' - ');
 randomIntNumbersGenerator(5, 0, 100, randomNumbersArray);
-console.log(randomNumbersArray);
+
+setTimeout(showNumbers, 5000);
+setTimeout(timerFunction, 6000, timerTime);
+
 
 
 // --> function to generate an array of unique random int numbers
@@ -21,3 +26,15 @@ function randomIntNumbersGenerator(numbersToGenerate, min, max, randomIntNumbers
         index++;
     }
 }
+
+// --> timer function
+function timerFunction(seconds){
+    const timer = setInterval(function(){
+        seconds--;
+        console.log(seconds);
+        if(seconds <= 0){
+            clearInterval(timer);
+        }
+    }, 1000)
+}
+
