@@ -49,7 +49,6 @@ main article {
 article > span {
     font-size: 1.5rem;
     color: black;
-    display: none;
 }
 
 main article.correct {

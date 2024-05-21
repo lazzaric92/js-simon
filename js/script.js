@@ -1,33 +1,48 @@
 // || SELECTORS
 const randomNumbersSectionEl = document.querySelector('#random-numbers');
+const randomNumbersDivEl = document.querySelector('#random-numbers > div');
 const timerEl = document.querySelector('#random-numbers > p');
 const timerSpanEl = document.querySelector('span#timer');
 const userNumbersSectionEl = document.querySelector('#user-numbers');
+const userNumbersDivEl = document.querySelector('#user-numbers > div');
 const resultEl = document.querySelector('p#result');
 
 
 // || VARIABLES
 const randomNumbersArray = [];
-let timerTime = 30;
+let numbers = 5;
+let timerTime = 5;
 const userNumbersArray = [];
 const correctUserNumbers = [];
 const wrongUserNumbers = [];
 
 
-getRandomIntNumbersGenerator(5, 0, 100, randomNumbersArray);
-/*
+// || INIT
+getRandomIntNumbersGenerator(numbers, 0, 100, randomNumbersArray);
+randomNumbersSectionEl.classList.remove('hidden');
+
 setTimeout(function(){
     console.log(randomNumbersArray.join(' - '));
-    timerFunction(timerTime);
-}, 4000);
+    for (let i = 0; i < randomNumbersArray.length; i++){
+        const articleEl = document.createElement('article');
+        const articleSpanEl = document.createElement('span');
+        articleSpanEl.append(randomNumbersArray[i]);
+        articleEl.appendChild(articleSpanEl);
+        randomNumbersDivEl.appendChild(articleEl);
+    }
 
-setTimeout(function(){
-    getUserNumbers(5, userNumbersArray);
-    console.log(userNumbersArray);
-    compareArrays(userNumbersArray, randomNumbersArray, correctUserNumbers, wrongUserNumbers);
+    timerEl.classList.remove('hidden');
+    timerFunction(timerTime, timerSpanEl);
+}, 1000);
 
-}, (timerTime * 1000 + 7000))
-*/
+
+// setTimeout(function(){
+//     getUserNumbers(numbers, userNumbersArray);
+//     console.log(userNumbersArray);
+//     compareArrays(userNumbersArray, randomNumbersArray, correctUserNumbers, wrongUserNumbers);
+
+// }, (timerTime * 1000 + 3000))
+
 
 
 // || FUNCTIONS
@@ -52,10 +67,10 @@ function getRandomIntNumbersGenerator(numbersToGenerate, min, max, randomIntNumb
 }
 
 // --> timer function
-function timerFunction(seconds){
+function timerFunction(seconds, container){
     const timer = setInterval(function(){
         seconds--;
-        console.log(seconds);
+        container.innerHTML = seconds + ' s';
         if(seconds <= 0){
             clearInterval(timer);
         }
