@@ -12,3 +12,53 @@ header,
 main {
     text-align: center;
 }
+
+header {
+    padding: 1.2rem;
+    background-color: #770a4d;
+    color: white;
+}
+
+main section {
+    margin: 2.3rem 0;
+}
+
+main h2 {
+    color: #770a4d;
+}
+
+div#random-numbers,
+div#user-numbers {
+    width: 60%;
+    margin: 1.5rem auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+main article {
+    width: 100px;
+    height: 130px;
+    border: 3px solid #534d4d;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+article > span {
+    font-size: 1.5rem;
+    color: black;
+}
+
+main article.correct {
+    border-color: green;
+}
+
+main article.wrong {
+    border-color: red;
+}
+
+main p {
+    font-size: 1.3rem;
+}
