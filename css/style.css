@@ -27,8 +27,8 @@ main h2 {
     color: #770a4d;
 }
 
-div#random-numbers,
-div#user-numbers {
+#random-numbers > div,
+#user-numbers > div {
     width: 60%;
     margin: 1.5rem auto;
     display: flex;
@@ -49,6 +49,7 @@ main article {
 article > span {
     font-size: 1.5rem;
     color: black;
+    display: none;
 }
 
 main article.correct {
@@ -61,4 +62,8 @@ main article.wrong {
 
 main p {
     font-size: 1.3rem;
+}
+
+.hidden {
+    display: none;
 }

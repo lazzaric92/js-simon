@@ -11,27 +11,15 @@
         <h1>Simon Says</h1>
     </header>
     <main>
-        <section>
+        <section id="random-numbers" class="hidden">
             <h2>Memorize the following numbers:</h2>
-            <div id="random-numbers" class="show">
-                <article><span>13</span></article>
-                <article><span>22</span></article>
-                <article><span>XD</span></article>
-                <article><span>44</span></article>
-                <article><span>G</span></article>
-            </div>
-            <p> Seconds left: <strong><span id="timer">0</span> s</strong></p>
+            <div></div>
+            <p class="hidden"> Seconds left: <strong><span id="timer"></span> s</strong></p>
         </section>
-        <section>
-            <h2 class="show">Now type the numbers</h2>
-            <div id="user-numbers">
-                <article class="wrong"><span>48</span></article>
-                <article class="wrong"><span>67</span></article>
-                <article class="correct"><span>22</span></article>
-                <article class="wrong"><span>9</span></article>
-                <article class="correct"><span>XD</span></article>
-            </div>
-            <p id="result">La prossima volta andrà meglio!</p>
+        <section id="user-numbers" class="hidden">
+            <h2>Now type the numbers</h2>
+            <div></div>
+            <p id="result"></p>
         </section>
     </main>
 

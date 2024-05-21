@@ -1,10 +1,21 @@
+// || SELECTORS
+const randomNumbersSectionEl = document.querySelector('#random-numbers');
+const timerEl = document.querySelector('#random-numbers > p');
+const timerSpanEl = document.querySelector('span#timer');
+const userNumbersSectionEl = document.querySelector('#user-numbers');
+const resultEl = document.querySelector('p#result');
+
+
+// || VARIABLES
 const randomNumbersArray = [];
 let timerTime = 30;
 const userNumbersArray = [];
 const correctUserNumbers = [];
 const wrongUserNumbers = [];
-getRandomIntNumbersGenerator(5, 0, 100, randomNumbersArray);
 
+
+getRandomIntNumbersGenerator(5, 0, 100, randomNumbersArray);
+/*
 setTimeout(function(){
     console.log(randomNumbersArray.join(' - '));
     timerFunction(timerTime);
@@ -16,9 +27,10 @@ setTimeout(function(){
     compareArrays(userNumbersArray, randomNumbersArray, correctUserNumbers, wrongUserNumbers);
 
 }, (timerTime * 1000 + 7000))
+*/
 
 
-
+// || FUNCTIONS
 
 // --> function to generate an array of unique random int numbers
 /**
@@ -82,3 +94,13 @@ function compareArrays(arrayA, arrayB, correctNumbersArray, wrongNumbersArray){
 
     console.log(wrongNumbersArray.join(' - '), 'Wrong numbers: ' + wrongNumbersArray.length);
 }
+
+
+// || MEMO
+// <article><span class="hidden"></span></article>
+// <article><span></span></article>
+
+// <article class="wrong"><span></span></article>
+// <article class="correct"><span></span></article>
+
+// La prossima volta andrà meglio!
